@@ -1,0 +1,182 @@
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f7f2;
+    color: #333;
+}
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/versailles-header.jpg');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.restaurant-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.restaurant-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.restaurant-card:hover {
+    transform: translateY(-10px);
+}
+
+.restaurant-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.restaurant-content {
+    padding: 2rem;
+}
+
+.restaurant-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #1d3557;
+}
+
+.restaurant-tag {
+    display: inline-block;
+    background-color: #e63946;
+    color: white;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.restaurant-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.restaurant-info i {
+    margin-right: 0.5rem;
+    color: #1d3557;
+}
+
+.restaurant-description {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.stars {
+    color: #ffd700;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.restaurant-button {
+    display: inline-block;
+    background-color: #1d3557;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.restaurant-button:hover {
+    background-color: #457b9d;
+}
+
+footer {
+    background-color: #1d3557;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+/* Animation pour les cartes de restaurant */
+.restaurant-card:nth-child(1) { animation-delay: 0.1s; }
+.restaurant-card:nth-child(2) { animation-delay: 0.3s; }
+.restaurant-card:nth-child(3) { animation-delay: 0.5s; }
+.restaurant-card:nth-child(4) { animation-delay: 0.7s; }
+.restaurant-card:nth-child(5) { animation-delay: 0.9s; }
+
+/* Media Queries pour la responsivité */
+@media (min-width: 768px) {
+    .restaurant-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .restaurant-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Pour les petits écrans */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .restaurant-content {
+        padding: 1.5rem;
+    }
+    
+    .restaurant-title {
+        font-size: 1.5rem;
+    }
+}
